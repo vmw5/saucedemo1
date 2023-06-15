@@ -2,6 +2,7 @@ package datadriven;
 
 
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +15,7 @@ public class purchase {
 	
 //2. Sort product low to high
 	public void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver","C://Users/p/Desktop/D/Driver/Chrome/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C://Drivers/chromedriver_win32/chromedriver.exe");
 		WebDriver driver=new ChromeDriver();
 		driver.manange().timeouts().implicitlyWait(10,TimeUnit, SECONDS);
 		driver.get("https://www.saucedemo.com/inventory.html");
@@ -42,14 +43,14 @@ public class purchase {
 		for (WebElement item : items) {
             WebElement addToCartButton1 = item.findElement(By.id("add-to-cart-sauce-labs-onesie"));
             addToCartButton.click();
-         Thread.sleep(2000);
+        Thread.sleep(2000);
 		}
          
         WebElement item 2 = driver.findElements(By.inventory_item_name("Sauce Labs Bike Light"));
  		for (WebElement item : items) {
              WebElement addToCartButton2 = item.findElement(By.id("add-to-cart-sauce-labs-bike-light"));
              addToCartButton.click();
-          Thread.sleep(2000);
+        Thread.sleep(2000);
  		}
           
         WebElement item 3 = driver.findElements(By.inventory_item_name("Sauce Labs Bolt T-Shirt"));
@@ -63,22 +64,22 @@ public class purchase {
         for (WebElement item : items) {
              WebElement addToCartButton4 = item.findElement(By.id("add-to-cart-test.allthethings()-t-shirt-(red)"));
              addToCartButton.click();
-         Thread.sleep(2000);
+        Thread.sleep(2000);
         }
                 
          WebElement item 5 = driver.findElements(By.inventory_item_name("Sauce Labs Backpack"));
          for (WebElement item : items) {
               WebElement addToCartButton5 = item.findElement(By.id("add-to-cart-test.allthethings()-t-shirt-(red)"));
               addToCartButton.click();
-          Thread.sleep(2000);
+         Thread.sleep(2000);
          }
                     
           WebElement item 6 = driver.findElements(By.inventory_item_name("Sauce Labs Fleece Jacket"));
           for (WebElement item : items) {
         	  WebElement addToCartButton6 = item.findElement(By.id("add-to-cart-sauce-labs-fleece-jacket"));
               addToCartButton1.click();
-              Thread.sleep(2000);
-         driver.quit();
+          Thread.sleep(2000);
+          driver.quit();
 		}
 	}
         
@@ -91,8 +92,8 @@ public class purchase {
    		   driver.navigate().to("https://www.saucedemo.com/cart.html");
 
         	        
-    	   WebElement items = driver.findElements(By.class("inventory_item_desc"));
-    	   WebElement prices = driver.findElements(By.class("inventory_details_price"));
+    	   WebElement items = driver.findElements(By.xpath("/html/body/div/div/div/div[2]/div/div[1]/div[3]/div[2]/a/div"));
+    	   WebElement prices = driver.findElements(By.xpath("/html/body/div/div/div/div[2]/div/div[1]/div[3]/div[2]/div[2]/div"));
 
     	   WebElement filteredItems = new Array();
 
